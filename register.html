@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        
+        <label for="class_year">Class Year:</label>
+        <input type="text" id="class_year" name="class_year" required><br><br>
+        
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="coutry" required><br><br>
+        
+        <input type="button" value="Register" onclick="register()">
+
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+    <script>
+       async function register(){
+        var name=document.getElementById('name').value;
+        var age=document.getElementById('age').value;
+        var class_year=document.getElementById('class_year').value;
+        var coutry=document.getElementById('country').value;
+        let response = await axios({method:'post',url: 'http://localhost:3000/information',data:{name,age,class_year,coutry}})
+console.log({response})
+       } 
+    </script>
+</body>
+</html>
