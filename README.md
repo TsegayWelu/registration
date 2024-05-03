@@ -1,1 +1,1 @@
-this is rgistration 
+this is rgistration  page that is developed
